@@ -40,6 +40,17 @@ document.addEventListener("click", e => {
   }
 });
 
+// Swap X and Y axes
+document.getElementById("swap-axes").addEventListener("click", () => {
+  points.forEach(p => {
+    [p.x, p.y] = [p.y, p.x];
+  });
+  renderTable();
+  // Clear interpolation output
+  document.getElementById("output").textContent = "";
+  document.getElementById("interp-x").value = "";
+});
+
 // Interpolate
 document.getElementById("interp-x").addEventListener("input", () => {
   const x = parseFloat(document.getElementById("interp-x").value);
