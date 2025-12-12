@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#2563eb" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="apple-touch-icon" href="icons/icon-180"/>
+  <title>Linear Interpolator</title>
+  <link rel="icon" type="image/png" href="images/favicon.png">
+</head>
+
+<body>
+  <header>
+    <h1>Linear Interpolator</h1>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Data Points</h2>
+
+      <table id="points-table">
+        <thead>
+          <tr><th>X</th><th>Y</th><th></th></tr>
+        </thead>
+        <tbody id="points-body"></tbody>
+      </table>
+
+      <button class="btn" id="add-row">Add Point</button>
+    </section>
+
+    <section class="card">
+      <h2>Interpolate</h2>
+      <input id="interp-x" type="number" placeholder="Enter X value…" />
+      <div id="output"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Works offline · Add to Home Screen</p>
+  </footer>
+
+  <script src="script.js">
+    if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('service-worker.js');
+}
+  </script>
+</body>
+</html>
